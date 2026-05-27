@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Abhishek & Komal - Wedding Website</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
+
+    
+
+    <style>
+
+        .pinyon-script { font-family: 'Pinyon Script', cursive; }
+
+        .playfair-serif { font-family: 'Playfair Display', serif; }
+
+        body { font-family: 'Montserrat', sans-serif; background-color: #f0ece6; }
+
+        .linen-texture { background-image: url('https://www.transparenttextures.com/patterns/canvas-paper.png'); }
+
+        
+
+        /* Timeline Line Axis Vector placement alignment */
+
+        .timeline-axis::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: 4px;
+
+            bottom: 4px;
+
+            left: 50%;
+
+            width: 1px;
+
+            background-color: #e2e8f0;
+
+            transform: translateX(-50%);
+
+        }
+
+        @keyframes fadeIn {
+
+            from { opacity: 0; transform: translateY(8px); }
+
+            to { opacity: 1; transform: translateY(0); }
+
+        }
+
+        .animate-fade-in { animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    </style>
+
+</head>
+
+<body class="antialiased">
+
+
+    <main class="max-w-md mx-auto min-h-screen bg-[#faf8f4] shadow-2xl relative overflow-x-hidden flex flex-col justify-between linen-texture">
+
+        
+
+        <section id="envelope-screen" class="absolute inset-0 w-full h-full z-50 flex flex-col items-center justify-center px-8 text-center transition-all duration-1000 ease-in-out bg-[#faf8f4]">
+
+            <div class="mb-4">
+
+                <p class="text-[11px] uppercase tracking-[0.3em] text-[#869299] font-light">Together with their families</p>
+
+                <h1 class="pinyon-script text-6xl text-[#516370] mt-4">Abhishek & Komal</h1>
+
+            </div>
+
+
+            <div class="relative w-full max-w-[310px] aspect-[4/3] my-8 cursor-pointer group" onclick="openEnvelope()">
+
+                <div class="absolute inset-0 bg-[#9fb1bd] rounded-lg shadow-xl border border-white/20 flex flex-col items-center justify-center transition-transform duration-500 group-hover:scale-[1.02]">
+
+                    <div class="absolute top-0 inset-x-0 h-0 border-t-[105px] border-t-[#afc0cc] border-x-[155px] border-x-transparent rounded-t-lg z-10 pointer-events-none"></div>
+
+                    <div class="w-14 h-14 rounded-full bg-[#ded2c3] border border-white/50 flex items-center justify-center z-20 transform group-hover:rotate-12 transition-transform duration-500">
+
+                        <span class="playfair-serif italic text-[#516370] text-base font-semibold tracking-tighter">AK</span>
+
+                    </div>
+
+                    <p class="text-white text-[10px] uppercase tracking-[0.25em] font-medium mt-6 z-20 opacity-80 animate-pulse">Click to Open</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div id="invitation-app-body" class="hidden opacity-0 w-full flex-1 flex flex-col">
+
+            
+
+            <section id="view-home" class="w-full flex-1 flex flex-col items-center pt-8 px-6 text-center animate-fade-in">
+
+                <div class="w-48 h-16 mb-4 overflow-hidden rounded-full opacity-90 mix-blend-multiply">
+
+                    <img src="https://images.unsplash.com/photo-1533616688419-b7a585564566?q=80&w=400" alt="Flowers" class="w-full h-full object-cover">
+
+                </div>
+
+
+                <span class="text-[9px] uppercase tracking-[0.25em] text-gray-400 block font-medium">Please join us for the wedding of</span>
+
+                <h2 class="pinyon-script text-5xl text-[#516370] my-3">Abhishek & Komal</h2>
+
+                <p class="text-[11px] uppercase tracking-[0.15em] text-[#71828d] font-semibold mt-1">12 December 2026</p>
+
+
+                <div class="my-10 z-10">
+
+                    <button onclick="navigateTo('view-details')" class="w-28 h-28 rounded-full border border-[#cbd5df] p-1.5 bg-white shadow-sm hover:scale-105 transition-all duration-300 flex items-center justify-center">
+
+                        <div class="w-full h-full bg-[#f4f6f8] rounded-full flex flex-col items-center justify-center p-2 border border-dashed border-gray-200">
+
+                            <span class="text-[8px] uppercase tracking-widest text-gray-400 font-medium">For The</span>
+
+                            <span class="playfair-serif text-lg font-light italic text-[#41525e] -my-1">Details</span>
+
+                            <span class="text-[8px] uppercase tracking-widest text-gray-400 font-medium">Click Here</span>
+
+                        </div>
+
+                    </button>
+
+                </div>
+
+
+                <div class="w-24 h-36 opacity-90 mix-blend-darken mb-6">
+
+                    <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?q=80&w=300" alt="White Tulip Motif" class="w-full h-full object-cover rounded-b-full">
+
+                </div>
+
+
+                <div class="relative w-full max-w-[320px] h-64 mt-4 mb-16 mx-auto">
+
+                    <div class="absolute left-1 top-0 bg-white p-3 pb-8 shadow-lg border border-gray-100 transform -rotate-6 w-44">
+
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=300" alt="Engagement Frame" class="w-full h-32 object-cover">
+
+                        <p class="pinyon-script text-2xl text-gray-500 mt-2">Love Story</p>
+
+                    </div>
+
+                    <div class="absolute right-1 top-6 bg-white p-3 pb-8 shadow-lg border border-gray-100 transform rotate-6 w-44">
+
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=300" alt="Golden Hour Frame" class="w-full h-32 object-cover">
+
+                        <p class="playfair-serif text-[9px] uppercase tracking-[0.2em] text-gray-400 mt-3 font-medium">Sincerely Yours</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section id="view-details" class="hidden w-full flex-1 flex flex-col items-center pt-6 px-6 text-center bg-[#faf8f4] animate-fade-in">
+
+                <button onclick="navigateTo('view-home')" class="text-[10px] uppercase tracking-[0.25em] text-gray-400 hover:text-[#516370] flex items-center gap-1.5 mb-8 font-medium">
+
+                    &lt; Go Back
+
+                </button>
+
+
+                <h2 class="pinyon-script text-5xl text-[#516370]">The Details</h2>
+
+                <p class="playfair-serif text-lg italic text-gray-700 tracking-wide mt-1 mb-8">Date & Location</p>
+
+
+                <div class="w-full max-w-xs space-y-6 border-b border-gray-200/60 pb-8 mb-8 text-sm">
+
+                    <div>
+
+                        <span class="text-[9px] uppercase tracking-[0.2em] text-gray-400 block font-semibold mb-1">Date</span>
+
+                        <p class="playfair-serif text-xl font-medium text-[#333]">12 December 2026</p>
+
+                    </div>
+
+                    <div>
+
+                        <span class="text-[9px] uppercase tracking-[0.2em] text-gray-400 block font-semibold mb-1">Ceremony Venue</span>
+
+                        <p class="playfair-serif text-base text-gray-400 italic">[ Insert Ceremony Time & Venue Here ]</p>
+
+                    </div>
+
+                    <div>
+
+                        <span class="text-[9px] uppercase tracking-[0.2em] text-gray-400 block font-semibold mb-1">Reception Venue</span>
+
+                        <p class="playfair-serif text-base text-gray-400 italic">[ Insert Reception Time & Venue Here ]</p>
+
+                    </div>
+
+                </div>
+
+
+                <h3 class="pinyon-script text-4xl text-[#516370] mb-8">Scheduled Events</h3>
+
+                <div class="relative w-full max-w-xs text-left text-xs space-y-8 pb-12 timeline-axis">
+
+                    
+
+                    <div class="flex items-center justify-between w-full relative z-10">
+
+                        <div class="w-[45%] text-right pr-4 font-semibold text-gray-400 tracking-wider">[ Time ]</div>
+
+                        <div class="absolute left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#9fb1bd] border-[3px] border-white box-content"></div>
+
+                        <div class="w-[45%] pl-4">
+
+                            <p class="font-bold text-gray-800">Sangeet</p>
+
+                            <p class="text-[11px] text-gray-400 mt-0.5 italic">[ Location Placeholder ]</p>
+
+                        </div>
+
+                    </div>
+
+                    
+
+                    <div class="flex items-center justify-between w-full relative z-10">
+
+                        <div class="w-[45%] text-right pr-4">
+
+                            <p class="font-bold text-gray-800">Haldi</p>
+
+                            <p class="text-[11px] text-gray-400 mt-0.5 italic">[ Location Placeholder ]</p>
+
+                        </div>
+
+                        <div class="absolute left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#9fb1bd] border-[3px] border-white box-content"></div>
+
+                        <div class="w-[45%] pl-4 font-semibold text-gray-400 tracking-wider">[ Time ]</div>
+
+                    </div>
+
+
+                    <div class="flex items-center justify-between w-full relative z-10">
+
+                        <div class="w-[45%] text-right pr-4 font-semibold text-gray-400 tracking-wider">[ Time ]</div>
+
+                        <div class="absolute left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#9fb1bd] border-[3px] border-white box-content"></div>
+
+                        <div class="w-[45%] pl-4">
+
+                            <p class="font-bold text-gray-800">Varnmala</p>
+
+                            <p class="text-[11px] text-gray-400 mt-0.5 italic">[ Location Placeholder ]</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex items-center justify-between w-full relative z-10">
+
+                        <div class="w-[45%] text-right pr-4">
+
+                            <p class="font-bold text-gray-800">Phera</p>
+
+                            <p class="text-[11px] text-gray-400 mt-0.5 italic">[ Location Placeholder ]</p>
+
+                        </div>
+
+                        <div class="absolute left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#9fb1bd] border-[3px] border-white box-content"></div>
+
+                        <div class="w-[45%] pl-4 font-semibold text-gray-400 tracking-wider">[ Time ]</div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="w-full max-w-xs py-8 border-t border-gray-200/60 text-xs text-gray-500">
+
+                    <h4 class="pinyon-script text-4xl text-[#516370] mb-3">Other Details</h4>
+
+                    <span class="text-[10px] uppercase tracking-widest text-gray-400 font-bold block mb-4">Dress Code Guidelines</span>
+
+                    
+
+                    <div class="space-y-4 text-left px-2">
+
+                        <div class="p-3 bg-white/60 rounded border border-gray-100">
+
+                            <p class="font-bold text-[#516370] uppercase tracking-wider text-[10px]">✨ Sangeet</p>
+
+                            <p class="text-gray-500 font-light mt-0.5 italic">[ Add style parameters / preferred attire colors here ]</p>
+
+                        </div>
+
+                        <div class="p-3 bg-white/60 rounded border border-gray-100">
+
+                            <p class="font-bold text-[#516370] uppercase tracking-wider text-[10px]">💛 Haldi</p>
+
+                            <p class="text-gray-500 font-light mt-0.5 italic">[ Add style parameters / preferred attire colors here ]</p>
+
+                        </div>
+
+                        <div class="p-3 bg-white/60 rounded border border-gray-100">
+
+                            <p class="font-bold text-[#516370] uppercase tracking-wider text-[10px]">🌸 Varnmala</p>
+
+                            <p class="text-gray-500 font-light mt-0.5 italic">[ Add style parameters / preferred attire colors here ]</p>
+
+                        </div>
+
+                        <div class="p-3 bg-white/60 rounded border border-gray-100">
+
+                            <p class="font-bold text-[#516370] uppercase tracking-wider text-[10px]">🔥 Phera</p>
+
+                            <p class="text-gray-500 font-light mt-0.5 italic">[ Add style parameters / preferred attire colors here ]</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex justify-center gap-3 mt-6">
+
+                        <span class="w-5 h-5 rounded-full bg-[#0d0d0d] shadow-sm border border-gray-200"></span>
+
+                        <span class="w-5 h-5 rounded-full bg-[#ded2c3] shadow-sm border border-gray-200"></span>
+
+                        <span class="w-5 h-5 rounded-full bg-[#8c9ba5] shadow-sm border border-gray-200"></span>
+
+                        <span class="w-5 h-5 rounded-full bg-[#526470] shadow-sm border border-gray-200"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="w-full bg-[#516370] text-white px-6 py-12 text-center rounded-t-3xl mt-8">
+
+                    <h3 class="playfair-serif text-xl italic font-light mb-1">Save Our Date</h3>
+
+                    <p class="text-[11px] text-white/70 max-w-xs mx-auto mb-6 tracking-wide font-light">
+
+                        Add our celebration itinerary to your calendar framework to ensure you don't miss any upcoming updates.
+
+                    </p>
+
+                    <div class="max-w-xs mx-auto">
+
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Abhishek+%26+Komal%27s+Wedding&dates=20261212T110000Z/20261213T040000Z&details=Wedding+celebrations+of+Abhishek+and+Komal." target="_blank" class="block w-full bg-white text-[#516370] text-[10px] uppercase tracking-[0.2em] py-3.5 font-bold rounded shadow-md hover:bg-gray-50 transition-colors">
+
+                            Add To Google Calendar
+
+                        </a>
+
+                    </div>
+
+                    <button onclick="navigateTo('view-home')" class="text-[9px] text-white/40 hover:text-white/70 tracking-widest block mx-auto mt-8 uppercase transition-colors underline">
+
+                        Back to Welcome Screen
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        function openEnvelope() {
+
+            const envelopeScreen = document.getElementById('envelope-screen');
+
+            const appBody = document.getElementById('invitation-app-body');
+
+            envelopeScreen.classList.add('opacity-0', 'scale-95');
+
+            setTimeout(() => {
+
+                envelopeScreen.classList.add('hidden');
+
+                appBody.classList.remove('hidden');
+
+                setTimeout(() => { appBody.classList.add('opacity-100'); }, 50);
+
+            }, 800);
+
+        }
+
+
+        function navigateTo(viewId) {
+
+            const homeView = document.getElementById('view-home');
+
+            const detailsView = document.getElementById('view-details');
+
+            if (viewId === 'view-details') {
+
+                homeView.classList.add('hidden');
+
+                detailsView.classList.remove('hidden');
+
+                detailsView.classList.add('flex');
+
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            } else {
+
+                detailsView.classList.add('hidden');
+
+                detailsView.classList.remove('flex');
+
+                homeView.classList.remove('hidden');
+
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+
